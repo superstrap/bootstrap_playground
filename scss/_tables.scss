@@ -31,7 +31,8 @@
   // Another advantage is that this generates less code and makes the selector less specific making it easier to override.
   // stylelint-disable-next-line selector-max-universal
   > :not(caption) > * > * {
-    padding: $table-cell-padding-y $table-cell-padding-x;
+    padding-block: $table-cell-padding-y;
+    padding-inline:  $table-cell-padding-x;
     // Following the precept of cascades: https://codepen.io/miriamsuzanne/full/vYNgodb
     color: var(--#{$prefix}table-color-state, var(--#{$prefix}table-color-type, var(--#{$prefix}table-color)));
     background-color: var(--#{$prefix}table-bg);

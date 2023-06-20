@@ -6,17 +6,22 @@
 // Color system
 
 // scss-docs-start gray-color-variables
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
+$white:           #ffffff !default;
+$gray-100:        #f2f2f7 !default;
+$gray-200:        #e5e5ea !default;
+$gray-300:        #d1d1d6 !default;
+$gray-400:        #c7c7cc !default;
+$gray-500:        #aeaeb2 !default;
+$gray-600:        #8e8e93 !default;
+$gray-700:        #636366 !default;
+$gray-800:        #3a3a3c !default;
+$gray-900:        #1c1c1e !default;
+$gray-primary:    #4d4d4d !default;
+$gray-secondary:  #808080 !default;
+$gray-tertiary:   #c6c6c6 !default;
+$gray-quaternary: #e8e8e8 !default;
+$gray-quinary:    #f5f5f5 !default;
+$black:           #000000 !default;
 // scss-docs-end gray-color-variables
 
 // fusv-disable
@@ -30,22 +35,27 @@ $grays: (
   "600": $gray-600,
   "700": $gray-700,
   "800": $gray-800,
-  "900": $gray-900
+  "900": $gray-900,
+  "primary": $gray-primary,
+  "secondary": $gray-secondary,
+  "tertiary": $gray-tertiary,
+  "quaternary": $gray-quaternary,
+  "quinary": $gray-quinary
 ) !default;
 // scss-docs-end gray-colors-map
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:    #0d6efd !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
-$teal:    #20c997 !default;
-$cyan:    #0dcaf0 !default;
+$blue:    #007aff !default;
+$indigo:  #5856d6 !default;
+$purple:  #af52de !default;
+$pink:    #ff2d55 !default;
+$red:     #ff3b30 !default;
+$orange:  #ff9500 !default;
+$yellow:  #ffcc00 !default;
+$green:   #28cd41 !default;
+$teal:    #59adc4 !default;
+$cyan:    #55bef0 !default;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -63,13 +73,13 @@ $colors: (
   "black":      $black,
   "white":      $white,
   "gray":       $gray-600,
-  "gray-dark":  $gray-800
+  "gray-dark":  $gray-600
 ) !default;
 // scss-docs-end colors-map
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
-$min-contrast-ratio:   4.5 !default;
+$min-contrast-ratio:   2 !default;
 
 // Customize the light and dark text colors for use in our color contrast function.
 $color-contrast-dark:      $black !default;
@@ -299,13 +309,13 @@ $cyans: (
 
 // scss-docs-start theme-color-variables
 $primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$secondary:     $gray-secondary !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$light:         $gray-quinary !default;
+$dark:          $gray-primary !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -369,8 +379,8 @@ $escaped-characters: (
 
 $enable-caret:                true !default;
 $enable-rounded:              true !default;
-$enable-shadows:              false !default;
-$enable-gradients:            false !default;
+$enable-shadows:              true !default;
+$enable-gradients:            true !default;
 $enable-transitions:          true !default;
 $enable-reduced-motion:       true !default;
 $enable-smooth-scroll:        true !default;
@@ -397,7 +407,7 @@ $prefix:                      $variable-prefix !default;
 // The gradient which is added to components if `$enable-gradients` is `true`
 // This gradient is also added to elements with `.bg-gradient`
 // scss-docs-start variable-gradient
-$gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
+$gradient: linear-gradient(180deg, rgba($white, .18), rgba($white, 0)) !default;
 // scss-docs-end variable-gradient
 
 // Spacing
@@ -435,14 +445,14 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-text-align:           null !default;
-$body-color:                $gray-900 !default;
+$body-color:                $gray-primary !default;
 $body-bg:                   $white !default;
 
 $body-secondary-color:      rgba($body-color, .75) !default;
-$body-secondary-bg:         $gray-200 !default;
+$body-secondary-bg:         $gray-secondary !default;
 
 $body-tertiary-color:       rgba($body-color, .5) !default;
-$body-tertiary-bg:          $gray-100 !default;
+$body-tertiary-bg:          $gray-tertiary !default;
 
 $body-emphasis-color:       $black !default;
 
@@ -530,25 +540,25 @@ $container-padding-x: $grid-gutter-width !default;
 // Define common padding and border radius sizes and more.
 
 // scss-docs-start border-variables
-$border-width:                1px !default;
+$border-width:                .5px !default;
 $border-widths: (
-  1: 1px,
-  2: 2px,
-  3: 3px,
-  4: 4px,
+  1: .5px,
+  2: 1px,
+  3: 2px,
+  4: 3.5px,
   5: 5px
 ) !default;
 $border-style:                solid !default;
-$border-color:                $gray-300 !default;
-$border-color-translucent:    rgba($black, .175) !default;
+$border-color:                $gray-200 !default;
+$border-color-translucent:    rgba($black, .08) !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
-$border-radius:               .375rem !default;
-$border-radius-sm:            .25rem !default;
-$border-radius-lg:            .5rem !default;
-$border-radius-xl:            1rem !default;
-$border-radius-xxl:           2rem !default;
+$border-radius:               5px !default;
+$border-radius-sm:            4px !default;
+$border-radius-lg:            6px !default;
+$border-radius-xl:            8px !default;
+$border-radius-xxl:           10px !default;
 $border-radius-pill:          50rem !default;
 // scss-docs-end border-radius-variables
 // fusv-disable
@@ -556,9 +566,9 @@ $border-radius-2xl:           $border-radius-xxl !default; // Deprecated in v5.3
 // fusv-enable
 
 // scss-docs-start box-shadow-variables
-$box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
-$box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
-$box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
+$box-shadow:                  0 0.25px 0.25px rgba($black, .15), 0 1px 0.75px rgba($black, .05) !default;
+$box-shadow-sm:               0 0.25px 0.25px rgba($black, .075), 0 1px 0.75px rgba($black, .025) !default;
+$box-shadow-lg:               0 0.25px 0.25px rgba($black, .3), 0 1px 0.75px rgba($black, .1) !default;
 $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
 // scss-docs-end box-shadow-variables
 
@@ -566,11 +576,11 @@ $component-active-color:      $white !default;
 $component-active-bg:         $primary !default;
 
 // scss-docs-start focus-ring-variables
-$focus-ring-width:      .25rem !default;
-$focus-ring-opacity:    .25 !default;
+$focus-ring-width:      3px !default;
+$focus-ring-opacity:    .5 !default;
 $focus-ring-color:      rgba($primary, $focus-ring-opacity) !default;
 $focus-ring-blur:       0 !default;
-$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color !default;
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color, /*0 0 0 0.5px rgba($black, .8),*/ 0 1px 0 rgba($black, .12), 0 .5px 0 rgba($black, .06) !default;
 // scss-docs-end focus-ring-variables
 
 // scss-docs-start caret-variables
@@ -603,7 +613,7 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      SFPro serif !default;
+$font-family-sans-serif:      SFPro, serif !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$prefix}font-sans-serif) !default;
@@ -612,9 +622,9 @@ $font-family-code:            var(--#{$prefix}font-monospace) !default;
 // $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
 // $font-size-base affects the font size of the body text
 $font-size-root:              null !default;
-$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-$font-size-sm:                $font-size-base * .875 !default;
-$font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-base:              .8125rem !default; // 13px
+$font-size-sm:                .6875rem !default;
+$font-size-lg:                1rem !default;
 
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
@@ -714,7 +724,7 @@ $dt-font-weight:              $font-weight-bold !default;
 $list-inline-padding:         .5rem !default;
 
 $mark-padding:                .1875em !default;
-$mark-bg:                     $yellow-100 !default;
+$mark-bg:                     $yellow !default;
 // scss-docs-end type-variables
 
 
@@ -723,8 +733,8 @@ $mark-bg:                     $yellow-100 !default;
 // Customizes the `.table` component with basic values, each used across all table variations.
 
 // scss-docs-start table-variables
-$table-cell-padding-y:        .5rem !default;
-$table-cell-padding-x:        .5rem !default;
+$table-cell-padding-y:        .1875rem .3125rem !default;
+$table-cell-padding-x:        .375rem !default;
 $table-cell-padding-y-sm:     .25rem !default;
 $table-cell-padding-x-sm:     .25rem !default;
 
@@ -829,7 +839,7 @@ $btn-font-size-lg:            $input-btn-font-size-lg !default;
 $btn-border-width:            $input-btn-border-width !default;
 
 $btn-font-weight:             $font-weight-normal !default;
-$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
+$btn-box-shadow:              $box-shadow !default;
 $btn-focus-width:             $input-btn-focus-width !default;
 $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
 $btn-disabled-opacity:        .65 !default;

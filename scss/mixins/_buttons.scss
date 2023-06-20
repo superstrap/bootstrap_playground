@@ -20,10 +20,6 @@
 ) {
   --#{$prefix}btn-color: #{$color};
   --#{$prefix}btn-bg: #{$background};
-  --#{$prefix}btn-border-color: #{$border};
-  --#{$prefix}btn-hover-color: #{$hover-color};
-  --#{$prefix}btn-hover-bg: #{$hover-background};
-  --#{$prefix}btn-hover-border-color: #{$hover-border};
   --#{$prefix}btn-focus-shadow-rgb: #{to-rgb(mix($color, $border, 15%))};
   --#{$prefix}btn-active-color: #{$active-color};
   --#{$prefix}btn-active-bg: #{$active-background};
